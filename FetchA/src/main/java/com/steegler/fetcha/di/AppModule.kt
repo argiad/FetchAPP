@@ -1,4 +1,4 @@
-package com.steegler.fetcha
+package com.steegler.fetcha.di
 
 import android.content.Context
 import androidx.room.Room

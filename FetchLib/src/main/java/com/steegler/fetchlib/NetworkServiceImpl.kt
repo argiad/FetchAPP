@@ -19,11 +19,11 @@ internal class NetworkServiceImpl(override val queue: RequestQueue) : NetworkSer
                     cont.resume(Result.Success(responseData))
                 } catch (e: Exception) {
                     e.printStackTrace()
-                    cont.resume(Result.Failure(FetchLibError.NetworkError(e.localizedMessage)))
+                    cont.resume(Result.Failure(FetchLibError.NetworkError(e.localizedMessage ?: "")))
                 }
             },
             { error ->
-                cont.resume(Result.Failure(FetchLibError.NetworkError(error.localizedMessage)))
+                cont.resume(Result.Failure(FetchLibError.NetworkError(error.localizedMessage ?: "")))
             }
         )
 
